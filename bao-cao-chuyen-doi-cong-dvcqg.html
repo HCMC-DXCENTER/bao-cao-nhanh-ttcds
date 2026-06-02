@@ -210,6 +210,9 @@
   .nav-link:hover { background: var(--bg3); color: var(--text); }
   .nav-brand { font-size: 0.95rem; font-weight: 700; color: var(--text2); margin-right: 10px; white-space: nowrap; }
 
+  /* ── ORDERED LIST ── */
+  ol li, ul li { margin-bottom: 2px; }
+
   /* ── PRINT ── */
   @media print {
     nav { display: none; }
@@ -274,6 +277,7 @@
     <a class="nav-link" href="#vuongmac">Vướng mắc</a>
     <a class="nav-link" href="#phancong">Phân công</a>
     <a class="nav-link" href="#lienheo">Liên hệ</a>
+    <a class="nav-link" href="#huongdan" style="color:var(--info); font-weight:600;">Hướng dẫn P/X</a>
     <span style="flex:1"></span>
     <button class="export-btn" onclick="window.print()">In / PDF</button>
   </div>
@@ -858,6 +862,516 @@
       </div></div>
     </div>
   </div>
+
+  <hr>
+
+  <!-- ===== HƯỚNG DẪN PHƯỜNG/XÃ/ĐẶC KHU ===== -->
+  <div id="huongdan" class="section-anchor">
+
+    <div style="background:linear-gradient(90deg,#38bdf812 0%,transparent 100%); border-left:4px solid var(--info); border-radius:var(--radius); padding:20px 24px; margin-bottom:28px;">
+      <h2 style="margin-bottom:6px; color:var(--info);">Hướng dẫn dành cho cán bộ cấp Phường / Xã / Đặc khu</h2>
+      <p>Tài liệu này hướng dẫn cán bộ tiếp nhận, xử lý hồ sơ tại Bộ phận Một cửa cấp phường, xã, thị trấn và các đơn vị hành chính đặc khu sử dụng <strong>Cổng Dịch vụ công Quốc gia</strong> tại Trung tâm Dữ liệu Quốc gia (vận hành chính thức từ 22:00 ngày 29/5/2026) và cách liên hệ hỗ trợ khi gặp sự cố.</p>
+    </div>
+
+    <!-- 1. TỔNG QUAN HỆ THỐNG -->
+    <h3>1. Tổng quan hệ thống dành cho cấp phường/xã</h3>
+    <div class="grid-2 mb-16">
+      <div class="card">
+        <div class="card-header">Cổng DVC QG mới (Hệ thống chính)</div>
+        <div class="card-body stack gap-8">
+          <p>Địa chỉ truy cập: <strong style="color:var(--info);">dichvucong.gov.vn</strong></p>
+          <p>Đây là hệ thống chính thức do Bộ Công an (TTDLQG) vận hành từ 29/5/2026. Toàn bộ hồ sơ mới phải nộp và xử lý trên hệ thống này.</p>
+          <hr style="margin:4px 0">
+          <p><strong>Cán bộ cần có:</strong></p>
+          <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+            <li>Tài khoản quản trị do đơn vị cấp trên (Trung tâm HCC tỉnh) thiết lập</li>
+            <li>Phân quyền đúng chức năng: tiếp nhận, xử lý, trả kết quả</li>
+            <li>Kết nối Internet ổn định, trình duyệt Chrome/Edge phiên bản mới</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Cổng cũ VPCP (Tra cứu lịch sử)</div>
+        <div class="card-body stack gap-8">
+          <p>Địa chỉ: <strong style="color:var(--text3);">vpcp.dichvucong.gov.vn</strong></p>
+          <p>Chỉ dùng để <strong>tra cứu hồ sơ đã nộp trước ngày 29/5/2026</strong>. Không tiếp nhận hồ sơ mới. Duy trì cho đến khi toàn bộ dữ liệu lịch sử được chuyển sang hệ thống mới.</p>
+          <hr style="margin:4px 0">
+          <p class="text-sm" style="color:var(--warning);">Lưu ý: Nếu người dân hỏi về hồ sơ cũ chưa có kết quả, hướng dẫn tra cứu tại cổng cũ hoặc liên hệ Trung tâm HCC tỉnh.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ĐĂNG NHẬP & TÀI KHOẢN -->
+    <h3>2. Đăng nhập và quản lý tài khoản</h3>
+    <div class="card mb-16">
+      <div class="card-header" onclick="toggleCard(this)">
+        Hướng dẫn đăng nhập hệ thống
+        <span class="row gap-6"><span class="pill info">Bắt buộc nắm vững</span><button class="collapse-btn open">▾</button></span>
+      </div>
+      <div class="collapsible-body card-body">
+        <div class="grid-2" style="gap:14px;">
+          <div>
+            <p class="text-bold text-primary mb-8">Đăng nhập bằng tài khoản VNeID</p>
+            <ol style="padding-left:20px; color:var(--text2); font-size:0.95rem; line-height:2;">
+              <li>Truy cập <strong>dichvucong.gov.vn</strong></li>
+              <li>Chọn <strong>"Đăng nhập"</strong> → chọn <strong>"VNeID"</strong></li>
+              <li>Quét mã QR bằng ứng dụng VNeID trên điện thoại <em>hoặc</em> nhập số CCCD + mật khẩu VNeID</li>
+              <li>Xác nhận OTP gửi về số điện thoại đăng ký VNeID</li>
+              <li>Chọn đúng <strong>vai trò "Cán bộ xử lý"</strong> khi được hỏi</li>
+            </ol>
+            <div class="callout warning" style="margin-top:12px;">
+              <div class="callout-title">Lỗi thường gặp khi đăng nhập</div>
+              Nếu bị thoát tài khoản giữa chừng hoặc báo "Phiên đăng nhập hết hạn": đóng hết tab, xóa cache trình duyệt (Ctrl+Shift+Del), đăng nhập lại. Nếu vẫn lỗi → liên hệ đầu mối Mobifone cấp tỉnh.
+            </div>
+          </div>
+          <div>
+            <p class="text-bold text-primary mb-8">Kiểm tra tài khoản trước khi làm việc</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Mục kiểm tra</th><th>Trạng thái đúng</th></tr></thead>
+                <tbody>
+                  <tr><td>Tên đơn vị hiển thị</td><td>Đúng tên phường/xã của bạn</td></tr>
+                  <tr><td>Vai trò tài khoản</td><td>Cán bộ tiếp nhận / Cán bộ xử lý</td></tr>
+                  <tr><td>Danh sách TTHC</td><td>Hiển thị đủ thủ tục của đơn vị</td></tr>
+                  <tr><td>Hộp thư hồ sơ</td><td>Nhận được hồ sơ mới từ cổng</td></tr>
+                  <tr><td>Thanh toán</td><td>Tài khoản thụ hưởng đúng đơn vị</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-muted" style="margin-top:8px;">Nếu bất kỳ mục nào sai → báo ngay cho Trung tâm HCC tỉnh/huyện để điều chỉnh cấu hình.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. QUY TRÌNH TIẾP NHẬN HỒ SƠ -->
+    <h3>3. Quy trình tiếp nhận và xử lý hồ sơ trực tuyến</h3>
+    <div class="card mb-16">
+      <div class="card-header" onclick="toggleCard(this)">
+        Luồng xử lý hồ sơ từ đầu đến cuối
+        <span class="row gap-6"><span class="pill success">Quy trình chuẩn</span><button class="collapse-btn open">▾</button></span>
+      </div>
+      <div class="collapsible-body card-body">
+        <div class="table-wrap mb-12">
+          <table>
+            <thead><tr><th style="width:40px">#</th><th>Bước</th><th>Người thực hiện</th><th>Trạng thái trên hệ thống</th><th>Thời hạn</th></tr></thead>
+            <tbody>
+              <tr class="row-info"><td><strong>1</strong></td><td>Người dân nộp hồ sơ trực tuyến trên dichvucong.gov.vn hoặc tại Bộ phận Một cửa (cán bộ nhập thay)</td><td>Người dân / Cán bộ</td><td><span class="pill">Mới đăng ký</span></td><td>—</td></tr>
+              <tr><td><strong>2</strong></td><td>Cán bộ đăng nhập hệ thống, vào <strong>"Hộp thư tiếp nhận"</strong>, kiểm tra hồ sơ mới</td><td>Cán bộ tiếp nhận</td><td><span class="pill">Mới đăng ký</span></td><td>Trong ngày làm việc</td></tr>
+              <tr class="row-success"><td><strong>3</strong></td><td>Kiểm tra hồ sơ đủ điều kiện → nhấn <strong>"Tiếp nhận"</strong>, hệ thống tự phát phiếu hẹn trả kết quả</td><td>Cán bộ tiếp nhận</td><td><span class="pill success">Được tiếp nhận</span></td><td>Trong ngày làm việc</td></tr>
+              <tr class="row-warning"><td><strong>3b</strong></td><td>Hồ sơ thiếu giấy tờ → nhấn <strong>"Yêu cầu bổ sung"</strong>, ghi rõ nội dung cần bổ sung, hệ thống tự thông báo đến người dân</td><td>Cán bộ tiếp nhận</td><td><span class="pill warning">Yêu cầu bổ sung</span></td><td>Trong ngày làm việc</td></tr>
+              <tr><td><strong>4</strong></td><td>Chuyển hồ sơ cho cán bộ xử lý chuyên môn, cập nhật tiến độ xử lý định kỳ</td><td>Cán bộ xử lý</td><td><span class="pill">Đang xử lý</span></td><td>Theo quy định từng TTHC</td></tr>
+              <tr class="row-success"><td><strong>5</strong></td><td>Hoàn thành xử lý → cập nhật kết quả, nhấn <strong>"Trả kết quả"</strong>, đính kèm văn bản số (nếu có)</td><td>Lãnh đạo / Cán bộ xử lý</td><td><span class="pill success">Đã xử lý xong</span></td><td>Trước hạn trên phiếu hẹn</td></tr>
+              <tr class="row-info"><td><strong>6</strong></td><td>Người dân nhận kết quả trực tuyến hoặc đến nhận trực tiếp tại Bộ phận Một cửa</td><td>Người dân</td><td><span class="pill info">Đã trả kết quả</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">Lưu ý quan trọng về đồng bộ</div>
+          Sau mỗi thao tác (tiếp nhận, cập nhật trạng thái, trả kết quả), hệ thống mất <strong>2–5 phút</strong> để đồng bộ về Cổng DVC QG. Người dân có thể tra cứu trạng thái hồ sơ tại dichvucong.gov.vn sau khoảng thời gian này. Nếu sau 15 phút vẫn chưa cập nhật → báo lỗi theo quy trình dưới đây.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. THANH TOÁN TRỰC TUYẾN -->
+    <h3>4. Hướng dẫn thanh toán trực tuyến phí/lệ phí</h3>
+    <div class="card mb-16">
+      <div class="card-header" onclick="toggleCard(this)">
+        Quy trình thanh toán và xử lý sự cố thanh toán
+        <span class="row gap-6"><span class="pill danger">Hay gặp lỗi</span><button class="collapse-btn open">▾</button></span>
+      </div>
+      <div class="collapsible-body card-body">
+        <div class="grid-2" style="gap:14px;">
+          <div class="stack gap-10">
+            <p class="text-bold text-primary">Khi người dân cần thanh toán phí/lệ phí:</p>
+            <ol style="padding-left:20px; color:var(--text2); font-size:0.95rem; line-height:2;">
+              <li>Hồ sơ ở trạng thái <strong>"Đang xử lý"</strong> → hệ thống tự hiển thị nút <strong>"Yêu cầu thanh toán"</strong></li>
+              <li>Người dân truy cập dichvucong.gov.vn → vào "Hồ sơ của tôi" → chọn hồ sơ cần thanh toán</li>
+              <li>Chọn hình thức: <strong>Thẻ ngân hàng (BIDV/VCB)</strong>, <strong>Ví điện tử (VNPay, MoMo)</strong>, hoặc <strong>Chuyển khoản QR</strong></li>
+              <li>Xác nhận giao dịch — hệ thống tự cập nhật trạng thái "Đã thanh toán" sau 1–3 phút</li>
+            </ol>
+            <div class="callout warning">
+              <div class="callout-title">Người dân không thể thanh toán trực tuyến?</div>
+              Hướng dẫn họ đến <strong>nộp tiền mặt trực tiếp</strong> tại Bộ phận Một cửa. Cán bộ xác nhận thu phí thủ công trên hệ thống, đồng thời báo lỗi qua kênh hỗ trợ để kỹ thuật khắc phục.
+            </div>
+          </div>
+          <div class="stack gap-10">
+            <p class="text-bold text-primary">Sự cố thanh toán thường gặp:</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Lỗi</th><th>Xử lý tạm thời</th></tr></thead>
+                <tbody>
+                  <tr><td>Không hiện nút thanh toán</td><td>Làm mới trang (F5), chờ 5 phút. Nếu còn → báo đầu mối kỹ thuật</td></tr>
+                  <tr><td>Thanh toán thành công nhưng hệ thống chưa ghi nhận</td><td>Hướng dẫn chụp lại biên lai ngân hàng, gửi đầu mối kỹ thuật tra soát</td></tr>
+                  <tr><td>Bị trừ tiền nhưng hồ sơ vẫn báo chưa thanh toán</td><td>Giữ biên lai ngân hàng, liên hệ ngay Mobifone tỉnh để đối soát giao dịch</td></tr>
+                  <tr><td>Không hoàn tiền khi hủy hồ sơ</td><td>Báo cáo lên Trung tâm HCC tỉnh, cung cấp mã giao dịch để xử lý hoàn tiền</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CÁC SỰ CỐ THƯỜNG GẶP -->
+    <h3>5. Xử lý sự cố thường gặp tại cấp phường/xã</h3>
+    <div class="stack gap-10 mb-16">
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Không đăng nhập được / Tài khoản bị khóa
+          <span class="row gap-6"><span class="pill danger">Thường gặp</span><button class="collapse-btn open">▾</button></span>
+        </div>
+        <div class="collapsible-body card-body">
+          <div class="grid-2" style="gap:12px;">
+            <div>
+              <p class="text-bold text-primary mb-8">Tự xử lý trước:</p>
+              <ol style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+                <li>Xóa cache trình duyệt: <strong>Ctrl + Shift + Del</strong> → Xóa tất cả</li>
+                <li>Thử trình duyệt khác (Chrome → Edge hoặc ngược lại)</li>
+                <li>Kiểm tra ứng dụng VNeID trên điện thoại còn hoạt động không</li>
+                <li>Thử đăng nhập lại từ đầu: đóng hết tab → mở mới → dichvucong.gov.vn</li>
+                <li>Nếu quên mật khẩu VNeID: liên hệ C06 địa phương để reset</li>
+              </ol>
+            </div>
+            <div>
+              <p class="text-bold text-primary mb-8">Liên hệ hỗ trợ nếu không tự xử lý được:</p>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Cấp hỗ trợ</th><th>Liên hệ</th></tr></thead>
+                  <tbody>
+                    <tr><td>Cấp 1: Trung tâm HCC huyện</td><td>Đầu mối kỹ thuật của huyện</td></tr>
+                    <tr><td>Cấp 2: Trung tâm HCC tỉnh</td><td>Xem bảng phân công P4 bên trên</td></tr>
+                    <tr><td>Cấp 3: Mobifone tỉnh</td><td>Qua Trung tâm HCC tỉnh chuyển tiếp</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Không nhận được hồ sơ mới / Hộp thư trống
+          <span class="row gap-6"><span class="pill danger">Thường gặp</span><button class="collapse-btn open">▾</button></span>
+        </div>
+        <div class="collapsible-body card-body">
+          <div class="stack gap-10">
+            <div class="callout danger">
+              <div class="callout-title">Nguyên nhân phổ biến nhất: Lỗi phân quyền / Sai cấu hình đơn vị</div>
+              Sau khi chuyển sang hệ thống mới (29/5/2026), nhiều tài khoản bị mất cấu hình phân quyền. Cán bộ thấy đăng nhập thành công nhưng hộp thư hoàn toàn trống.
+            </div>
+            <div class="grid-2" style="gap:12px;">
+              <div>
+                <p class="text-bold text-primary mb-8">Kiểm tra ngay:</p>
+                <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+                  <li>Vào <strong>"Quản lý tài khoản"</strong> → kiểm tra <strong>"Đơn vị"</strong> có đúng tên phường/xã không</li>
+                  <li>Kiểm tra <strong>"Vai trò"</strong> có phải là "Cán bộ tiếp nhận" không</li>
+                  <li>Kiểm tra <strong>"Danh sách TTHC được phân quyền"</strong></li>
+                  <li>Nhờ tài khoản Quản trị đơn vị kiểm tra lại phân quyền cho bạn</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-bold text-primary mb-8">Nếu kiểm tra thấy sai cấu hình:</p>
+                <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+                  <li>Báo ngay <strong>tài khoản Quản trị đơn vị</strong> (thường là lãnh đạo UBND phường/xã)</li>
+                  <li>Nếu tài khoản Quản trị cũng bị lỗi → báo <strong>Trung tâm HCC huyện</strong></li>
+                  <li>Cung cấp: Họ tên, CCCD, tên đơn vị, chức vụ, số điện thoại</li>
+                  <li>Trong lúc chờ xử lý: nhờ đồng nghiệp có tài khoản tốt tiếp nhận hộ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Hồ sơ không đồng bộ / Người dân không tra cứu được trạng thái
+          <span class="row gap-6"><span class="pill warning">Hay gặp</span><button class="collapse-btn">▾</button></span>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <div class="stack gap-10">
+            <p>Khi cán bộ đã cập nhật trạng thái trên hệ thống nhưng người dân vào dichvucong.gov.vn không thấy thay đổi:</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Thời gian chờ</th><th>Hành động</th></tr></thead>
+                <tbody>
+                  <tr><td>Dưới 15 phút</td><td>Bình thường — hệ thống đang đồng bộ, hướng dẫn người dân chờ và làm mới trang</td></tr>
+                  <tr><td>15–60 phút</td><td>Kiểm tra lại lần nữa. Nếu vẫn không cập nhật → ghi nhận thông tin hồ sơ và báo đầu mối kỹ thuật</td></tr>
+                  <tr class="row-warning"><td>Trên 60 phút</td><td>Báo ngay Trung tâm HCC tỉnh. Cung cấp: Mã hồ sơ, tên TTHC, thao tác đã thực hiện, thời điểm thực hiện</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout info">
+              <div class="callout-title">Hướng dẫn người dân khi hỏi về hồ sơ</div>
+              Nếu người dân lo lắng về tiến độ: tra cứu tại <strong>dichvucong.gov.vn</strong> → "Tra cứu hồ sơ" → nhập số CCCD hoặc mã hồ sơ. Hồ sơ nộp trước 29/5/2026 tra cứu tại <strong>vpcp.dichvucong.gov.vn</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Tìm kiếm TTHC trên Cổng bị lỗi / Không tìm thấy thủ tục
+          <span class="row gap-6"><span class="pill warning">Hay gặp</span><button class="collapse-btn">▾</button></span>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <div class="stack gap-10">
+            <p>Hệ thống tìm kiếm trên Cổng mới hiện vẫn còn một số lỗi. Một số cách xử lý tạm thời:</p>
+            <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+              <li>Thay vì tìm kiếm bằng từ khóa, thử duyệt theo <strong>danh mục lĩnh vực</strong> (VD: Hộ tịch → Đăng ký khai sinh)</li>
+              <li>Thử tìm bằng <strong>mã số TTHC</strong> nếu biết (lấy từ danh sách TTHC đơn vị)</li>
+              <li>Dùng <strong>chức năng "Dịch vụ của đơn vị tôi"</strong> để xem danh sách TTHC được phân công</li>
+              <li>Nếu TTHC không xuất hiện trong danh sách → đơn vị chưa được cấu hình → báo Trung tâm HCC tỉnh</li>
+            </ul>
+            <div class="callout warning">
+              <div class="callout-title">Chú ý quan trọng</div>
+              Một số TTHC cấp xã nay được thực hiện tập trung trên hệ thống của Bộ (VD: đất đai trên hệ thống Bộ TN&MT). Liên hệ Trung tâm HCC tỉnh để xác định rõ TTHC nào xử lý trên hệ thống nào.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Hệ thống chậm / Không truy cập được
+          <span class="row gap-6"><span class="pill warning">Hay gặp</span><button class="collapse-btn">▾</button></span>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <div class="grid-2" style="gap:12px;">
+            <div>
+              <p class="text-bold text-primary mb-8">Kiểm tra trước:</p>
+              <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+                <li>Kiểm tra kết nối Internet của máy tính (mở trang khác xem có vào được không)</li>
+                <li>Thử truy cập bằng điện thoại 4G (tách biệt với WiFi văn phòng)</li>
+                <li>Kiểm tra xem có thông báo bảo trì hệ thống không (hỏi đồng nghiệp đơn vị khác)</li>
+                <li>Nếu nhiều máy cùng bị: báo cáo bộ phận IT hoặc Trung tâm HCC huyện</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-bold text-primary mb-8">Phương án dự phòng khi hệ thống không truy cập được:</p>
+              <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9;">
+                <li>Tiếp nhận hồ sơ <strong>giấy tại quầy</strong>, ghi sổ theo dõi thủ công</li>
+                <li>Phát <strong>phiếu tiếp nhận thủ công</strong> với số thứ tự và hẹn trả</li>
+                <li>Khi hệ thống phục hồi: nhập lại hồ sơ đã tiếp nhận lên hệ thống ngay trong ngày</li>
+                <li>Báo cáo số lượng hồ sơ tiếp nhận thủ công cho Trung tâm HCC tỉnh</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6. QUY TRÌNH BÁO LỖI -->
+    <h3>6. Quy trình báo lỗi — Liên hệ hỗ trợ theo cấp</h3>
+    <div class="callout info mb-16">
+      <div class="callout-title">Nguyên tắc báo lỗi</div>
+      Khi gặp sự cố, hãy <strong>ghi lại đầy đủ thông tin</strong> trước khi gọi: (1) Mô tả lỗi cụ thể, (2) Thời điểm xảy ra, (3) Tên thủ tục / Mã hồ sơ liên quan, (4) Ảnh chụp màn hình lỗi (nếu có), (5) Đã thử xử lý gì. Thông tin đầy đủ giúp kỹ thuật xử lý nhanh hơn.
+    </div>
+
+    <div class="table-wrap mb-16">
+      <table>
+        <thead><tr>
+          <th>Cấp hỗ trợ</th>
+          <th>Liên hệ ai</th>
+          <th>Loại sự cố</th>
+          <th>Thời gian phản hồi mục tiêu</th>
+        </tr></thead>
+        <tbody>
+          <tr class="row-success">
+            <td><strong>Cấp 1 — Tự xử lý</strong></td>
+            <td>Tự xử lý hoặc hỏi đồng nghiệp</td>
+            <td>Lỗi đăng nhập đơn giản, tìm kiếm TTHC, làm mới trang</td>
+            <td>Ngay lập tức</td>
+          </tr>
+          <tr>
+            <td><strong>Cấp 2 — Trung tâm HCC huyện</strong></td>
+            <td>Đầu mối kỹ thuật / Quản trị viên hệ thống cấp huyện</td>
+            <td>Tài khoản bị lỗi, phân quyền sai, tài khoản quản trị đơn vị</td>
+            <td>Trong 2 giờ làm việc</td>
+          </tr>
+          <tr class="row-warning">
+            <td><strong>Cấp 3 — Trung tâm HCC tỉnh</strong></td>
+            <td>Đầu mối C12/P4 (xem bảng phân công)</td>
+            <td>Không đồng bộ hồ sơ, lỗi cấu hình TTHC, thanh toán lỗi hệ thống</td>
+            <td>Trong 4 giờ làm việc</td>
+          </tr>
+          <tr class="row-danger">
+            <td><strong>Cấp 4 — Khẩn cấp</strong></td>
+            <td>Thiếu tá Vũ Tiến Dũng: 0914.441.654</td>
+            <td>Hệ thống toàn tỉnh không truy cập được, mất toàn bộ dữ liệu hồ sơ</td>
+            <td>Trong 1 giờ (24/7)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7. KÊNH BÁO LỖI -->
+    <h3>7. Các kênh báo lỗi & hỗ trợ</h3>
+    <div class="grid-3 mb-16">
+      <div class="card">
+        <div class="card-header">Hệ thống PAKN — Phản ánh kiến nghị</div>
+        <div class="card-body stack gap-8">
+          <p>Sử dụng <strong>Hệ thống Hỗ trợ xử lý Phản ánh Kiến nghị</strong> tại TTDLQG để báo lỗi chính thức.</p>
+          <p class="text-sm text-muted">Đầu mối: Thiếu úy Hoàng Ngọc Long<br>SĐT: 0366.339.107</p>
+          <p class="text-sm text-muted">Yêu cầu cấp tài khoản quản trị đơn vị gửi về C12 trước khi sử dụng.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Gọi điện trực tiếp</div>
+        <div class="card-body stack gap-8">
+          <p>Với sự cố khẩn cấp ảnh hưởng đến việc tiếp nhận hồ sơ của người dân, gọi trực tiếp không qua email.</p>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>P4/C12 — Vũ Tiến Dũng</td><td><strong>0914.441.654</strong></td></tr>
+                <tr><td>P4/C12 — Phạm Đình Du</td><td><strong>0366.278.967</strong></td></tr>
+                <tr><td>Mobifone Solutions</td><td><strong>0939.880.885</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Giao ban hàng ngày</div>
+        <div class="card-body stack gap-8">
+          <p>TTDLQG tổ chức giao ban trực tuyến <strong>17:00–18:00 hàng ngày</strong> (từ 31/5/2026). Đây là kênh để tổng hợp và xử lý các vướng mắc hàng ngày.</p>
+          <p class="text-sm text-muted">Yêu cầu Trung tâm HCC tỉnh đại diện phản ánh vướng mắc của phường/xã tại giao ban.</p>
+          <p class="text-sm text-muted">Báo cáo nhanh gửi trước 15:00 mỗi ngày.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. FAQ -->
+    <h3>8. Câu hỏi thường gặp (FAQ)</h3>
+    <div class="stack gap-8 mb-16">
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Người dân hỏi: "Tôi đã nộp hồ sơ nhưng không thấy trên cổng mới?"
+          <button class="collapse-btn">▾</button>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <p><strong>Trả lời:</strong> Hỏi người dân hồ sơ nộp trước hay sau ngày <strong>29/5/2026</strong>:</p>
+          <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9; margin-top:8px;">
+            <li><strong>Nộp trước 29/5:</strong> Tra cứu tại <strong>vpcp.dichvucong.gov.vn</strong> (cổng cũ vẫn hoạt động phục vụ tra cứu lịch sử)</li>
+            <li><strong>Nộp sau 29/5:</strong> Tra cứu tại <strong>dichvucong.gov.vn</strong> → "Tra cứu hồ sơ" → nhập CCCD hoặc mã hồ sơ</li>
+            <li>Nếu không tìm thấy ở cả hai: hỏi người dân mã hồ sơ trên phiếu hẹn, báo cán bộ kỹ thuật kiểm tra</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Cán bộ hỏi: "Tôi phải xử lý những TTHC nào trên hệ thống mới?"
+          <button class="collapse-btn">▾</button>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <p>Căn cứ theo danh sách TTHC được phân công trong phần <strong>"Dịch vụ của đơn vị tôi"</strong> trên hệ thống sau khi đăng nhập. Liên hệ Trung tâm HCC tỉnh/huyện nếu thấy thiếu thủ tục hoặc có thủ tục sai địa chỉ xử lý.</p>
+          <div class="callout info" style="margin-top:10px;">
+            <div class="callout-title">Lưu ý với TTHC liên Bộ</div>
+            Một số thủ tục hành chính cấp xã (VD: đất đai, hộ tịch liên tỉnh) được xử lý tập trung trên hệ thống của Bộ tương ứng. Cán bộ cấp xã vẫn có thể <strong>tiếp nhận hồ sơ</strong> tại quầy nhưng hệ thống sẽ tự <strong>chuyển đến đúng Bộ</strong> để xử lý.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Người dân hỏi: "Tôi có thể nộp hồ sơ bằng điện thoại không?"
+          <button class="collapse-btn">▾</button>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <p>Có. Người dân có thể nộp hồ sơ trực tuyến bằng điện thoại thông qua:</p>
+          <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9; margin-top:8px;">
+            <li><strong>Trình duyệt web:</strong> Mở Chrome/Safari trên điện thoại → vào dichvucong.gov.vn → đăng nhập VNeID</li>
+            <li><strong>Ứng dụng VNeID:</strong> Có tính năng nộp hồ sơ trực tiếp trong app</li>
+          </ul>
+          <p style="margin-top:8px;">Với người cao tuổi hoặc không quen công nghệ: cán bộ có thể <strong>hỗ trợ nhập hộ</strong> tại Bộ phận Một cửa bằng tài khoản cán bộ có quyền tiếp nhận thay.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Cán bộ hỏi: "Hệ thống đang bảo trì, tôi có phải giải thích với người dân không?"
+          <button class="collapse-btn">▾</button>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <p>Khi hệ thống bảo trì hoặc có sự cố:</p>
+          <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9; margin-top:8px;">
+            <li>Thông báo lịch sự với người dân rằng hệ thống đang được nâng cấp/bảo trì</li>
+            <li><strong>Không từ chối tiếp nhận hồ sơ</strong> — tiếp nhận thủ công, phát phiếu hẹn</li>
+            <li>Khi hệ thống phục hồi, nhập hồ sơ đã tiếp nhận lên hệ thống ngay trong ngày</li>
+            <li>Mọi hồ sơ nhận thủ công vẫn phải được theo dõi và xử lý đúng hạn</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" onclick="toggleCard(this)">
+          Người dân hỏi: "Kết quả hồ sơ sẽ trả cho tôi qua đâu?"
+          <button class="collapse-btn">▾</button>
+        </div>
+        <div class="collapsible-body card-body closed" style="max-height:0">
+          <p>Kết quả hồ sơ có thể trả theo 3 hình thức, người dân chọn khi nộp hồ sơ:</p>
+          <ul style="padding-left:18px; color:var(--text2); font-size:0.95rem; line-height:1.9; margin-top:8px;">
+            <li><strong>Nhận trực tiếp:</strong> Đến Bộ phận Một cửa theo ngày hẹn trên phiếu</li>
+            <li><strong>Nhận qua bưu điện:</strong> Kết quả được gửi về địa chỉ đăng ký (VNPost)</li>
+            <li><strong>Nhận trực tuyến:</strong> Tải xuống tại dichvucong.gov.vn → "Hồ sơ của tôi" → trạng thái "Đã trả kết quả" — đối với các loại giấy tờ được phép số hóa</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 9. SỐ ĐIỆN THOẠI KHẨN -->
+    <h3>9. Số điện thoại hỗ trợ khẩn — Lưu vào điện thoại ngay</h3>
+    <div class="callout danger mb-12">
+      <div class="callout-title">Liên hệ ngay khi: Hệ thống không hoạt động từ 30 phút trở lên trong giờ làm việc; Mất toàn bộ hồ sơ; Không thể tiếp nhận hồ sơ mới</div>
+    </div>
+    <div class="grid-2 mb-16">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th colspan="3" style="background:var(--bg3); text-align:center; color:var(--text2);">Đầu mối TTDLQG / C12</th></tr>
+          <tr><th>Họ tên</th><th>Vai trò</th><th>SĐT</th></tr></thead>
+          <tbody>
+            <tr><td>Thiếu tá Vũ Tiến Dũng</td><td>Phó TP P4/C12</td><td><strong style="color:var(--info); font-family:monospace;">0914.441.654</strong></td></tr>
+            <tr><td>Thiếu úy Phạm Đình Du</td><td>Cán bộ P4/C12</td><td><strong style="color:var(--info); font-family:monospace;">0366.278.967</strong></td></tr>
+            <tr><td>Thiếu úy Hoàng Ngọc Long</td><td>P4/C12 — PAKN</td><td><strong style="color:var(--info); font-family:monospace;">0366.339.107</strong></td></tr>
+            <tr><td>Thiếu tá Vũ Ngọc Anh</td><td>P4/C12 — Agent Node</td><td><strong style="color:var(--info); font-family:monospace;">0936.452.223</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th colspan="3" style="background:var(--bg3); text-align:center; color:var(--text2);">Đầu mối Kỹ thuật Mobifone</th></tr>
+          <tr><th>Họ tên</th><th>Vai trò</th><th>SĐT</th></tr></thead>
+          <tbody>
+            <tr><td>Đào Ngọc Thành</td><td>Phó GĐ Mobifone Solutions</td><td><strong style="color:var(--success); font-family:monospace;">0939.880.885</strong></td></tr>
+            <tr><td colspan="3" style="color:var(--text3); font-size:0.875rem; padding:10px 14px;">Với sự cố kỹ thuật hạ tầng, phần mềm Cổng DVC QG — liên hệ Mobifone qua Trung tâm HCC tỉnh để chuyển tiếp</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 10. TÀI LIỆU THAM KHẢO -->
+    <h3>10. Tài liệu kỹ thuật tham khảo</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tài liệu</th><th>Nội dung chính</th><th>Cơ quan ban hành</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td>CV 562/TTDLQG-P4 (02/3/2026)</td><td>Quy chế tạm thời quản lý, vận hành Cổng DVC QG tại TTDLQG (16 trang)</td><td>TTDLQG</td><td>Tài liệu gốc — lưu hành nội bộ</td></tr>
+          <tr><td>DVCCDV-Huong_dan_tich_hop_v2.0 (30/5/2026)</td><td>Hướng dẫn tích hợp API thanh toán cho Đơn vị Cung cấp Dịch vụ</td><td>TTDLQG</td><td>Dành cho kỹ thuật viên hệ thống</td></tr>
+          <tr><td>HT_QLTTTT.Ver04 (20/4/2026)</td><td>Hướng dẫn vận hành Hệ thống Quản lý Thanh toán Tập trung (49 trang)</td><td>TTDLQG</td><td>Dự thảo — dành cho nghiệp vụ thanh toán</td></tr>
+          <tr><td>CV 88/CTSBMTT-QTHT</td><td>Triển khai dịch vụ ký số, xác thực phục vụ đồng bộ dữ liệu TTHC; kèm mẫu đề nghị cấp chứng thư chữ ký số</td><td>Ban Cơ yếu Chính phủ</td><td>Yêu cầu chuẩn bị hạ tầng ký số tại địa phương</td></tr>
+          <tr><td>Plan triển khai tích hợp Tỉnh_Final.xlsx</td><td>Checklist kết nối SSO VNeID, máy chủ bảo mật, cấu hình TTHC, kiểm thử end-to-end</td><td>C12/P4</td><td>Dành cho kỹ thuật viên triển khai</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /#huongdan -->
 
   <hr>
 
