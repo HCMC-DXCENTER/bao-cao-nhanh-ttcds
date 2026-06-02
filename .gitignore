@@ -1,0 +1,8 @@
+# Không đưa file gốc lên repo
+*.pdf
+*.docx
+*.xlsx
+*.docx~
+.DS_Store
+__pycache__/
+*.py[cod]
